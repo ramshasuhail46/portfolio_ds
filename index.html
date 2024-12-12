@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        slideLeft: 'slideLeft 4s ease-in-out forwards',
-                    },
-                    keyframes: {
-                        slideLeft: {
-                            '0%': { transform: 'translateX(0)', opacity: '1' }, // Start at the center
-                            '50%': { opacity: '0.5' }, // Reduce opacity halfway
-                            '80%': { transform: 'translateX(-40vw)', opacity: '1' }, // Stop slightly to the left
-                            '100%': { transform: 'translateX(-40vw)', opacity: '1' }, // Stay in position
-                        },
-                    },
-                },
-            },
-        };
-    </script>
+    <style>
+        /* Custom styles for scrolling brands */
+        .brands-scroll {
+            display: flex;
+            gap: 10px;
+            width: 300%; /* Adjust width to triple the content for smoother looping */
+    }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-33.33%); /* Move left by a third to loop seamlessly */
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 25s linear infinite;
+        }
+    </style>
 </head>
 <body>
     <div class="bg-white">
@@ -107,20 +109,51 @@
             <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
             <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-            <div class="text-center animate-slideLeft">
+            <div class="text-center">
                 <h1 class="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Hello! </h1>
-                <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">I am Ramsha Suhail.</p>
+                <p class="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">I am Ramsha</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
                 <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
                 <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn more <span aria-hidden="true">→</span></a>
                 </div>
             </div>
             </div>
-            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-            </div>
-        </div>
-    </div>      
+            <div class="relative w-[80%] overflow-hidden mx-auto py-12">
+                <div class="brands-scroll flex gap-10 animate-scroll">
+                    <!-- Kaggle Logo -->
+                    <div class="flex h-24 items-center justify-center">
+                        <a href="https://www.kaggle.com" target="_blank">
+                            <img src="kaggle.png" alt="Kaggle" class="h-full object-contain" width="150" height="50">
+                        </a>
+                    </div>
+                    <!-- GitHub Logo -->
+                    <div class="flex h-24 items-center justify-center">
+                        <a href="https://github.com" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-full object-contain" width="150" height="50">
+                        </a>
+                    </div>
+                    <!-- LeetCode Logo -->
+                    <div class="flex h-24 items-center justify-center">
+                        <a href="https://leetcode.com" target="_blank">
+                            <img src="leetcode.png" alt="Leetcode" class="h-full object-contain" width="150" height="50">
+                        </a>
+                    </div>
+                    <!-- Medium Logo -->
+                    <div class="flex h-24 items-center justify-center">
+                        <a href="https://medium.com" target="_blank">
+                            <img src="medium.png" alt="Medium" class="h-full object-contain" width="150" height="50">
+                        </a>
+                    </div>
+                    <!-- LinkedIn Logo -->
+                    <div class="flex h-24 items-center justify-center">
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="linkedin.png" alt="LinkedIn" class="h-full object-contain" width="150" height="50">
+                        </a>
+                    </div>
+
+                </div>
+        </div>  
+    </div>    
     
 </body>
 </html>
