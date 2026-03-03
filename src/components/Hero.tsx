@@ -11,17 +11,19 @@ const Hero = () => {
                         <path d="M12 2L4 6v12l8 4 8-4V6l-8-4zm0 2.2L18 7.5v9l-6 3-6-3v-9l6-3.3z" />
                     </svg>
                 </div>
-                <p className="text-2xl font-semibold text-[#111827]">Hey, I&apos;m Ramsha 👋</p>
+                <p className="text-2xl font-semibold text-[#111827]">
+                    Hey, I&apos;m Ramsha <span className="text-4xl align-middle">👋</span>
+                </p>
                 <h1 className="text-7xl font-black tracking-tighter text-black mb-2">AI Engineer</h1>
             </div>
 
             <div className="relative w-full max-w-[500px] h-80 flex items-center justify-center -mt-4">
                 <div className="w-full h-full flex items-center justify-center relative">
                     <Image
-                        src="/avatar.png"
+                        src="/portfolio/avatar.png"
                         alt="Ramsha Avatar"
                         fill
-                        className="object-contain mix-blend-multiply hover:scale-105 transition-transform duration-500"
+                        className="object-contain hover:scale-105 transition-transform duration-500"
                         priority
                     />
                 </div>
